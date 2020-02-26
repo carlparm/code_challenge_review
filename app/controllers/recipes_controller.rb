@@ -21,8 +21,12 @@ class RecipesController < ApplicationController
     end
 
     def create
-        byebug
         @recipe = Recipe.create(recipe_params)
+        params[:ingredients].keys.each do |id|
+            Ingredientrecipe.create(ingredient_id: id, recipe_id: @recipe.id)
+        end
+
+        redirect_to recipe_path(@recipe)
     end
 
     private

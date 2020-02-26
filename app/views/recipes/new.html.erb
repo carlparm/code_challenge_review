@@ -1,9 +1,13 @@
 <%= form_for @recipe do |f| %>
-  <%= f.collection_select :user_id, User.all, :id, :name, prompt: true %>
+  <%= f.label :user_id, "Author: " %>
+  <%= f.collection_select :user_id, User.all, :id, :name, prompt: true %><br>
+  <%= f.label :name, "Name: " %>
+  <%= f.text_field :name %><br>
+  <%= f.label "Pick Ingredients: " %>
     <% @ingredients.each do |ingredient| %>
         <div>
-        <%= check_box_tag(ingredient.id) %>
-        <%= label_tag(ingredient.id, "#{ingredient.name}") %>
+        <%= check_box_tag(:"ingredients[#{ingredient.id}") %>
+        <%= label_tag((:"ingredients[#{ingredient.id}"), "#{ingredient.name}") %>
         </div>
     <% end %>
   <%= f.submit %>

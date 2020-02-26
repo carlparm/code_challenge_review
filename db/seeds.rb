@@ -40,5 +40,8 @@ allergy1 = Allergy.create(ingredient_id: sugar.id, user_id: carl.id)
 allergy2 = Allergy.create(ingredient_id: cheese.id, user_id: bri.id)
 allergy3 = Allergy.create(ingredient_id: chicken.id, user_id: matteo.id)
 allergy4 = Allergy.create(ingredient_id: corn.id, user_id: matteo.id)
+allergy5 = Allergy.create(ingredient_id: corn.id, user_id: bri.id)
 
 
+# byebug
+0
