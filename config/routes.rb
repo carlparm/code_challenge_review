@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   get '/', to: "application#homepage", as: "homepage"
+  get '/search', to: 'recipes#search', as: "search"
+  get 'search/result', to: 'recipes#result'
   resources :allergies
   resources :ingredientrecipes
   resources :ingredients
