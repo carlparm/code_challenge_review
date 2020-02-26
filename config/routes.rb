@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get '/', to: "application#homepage", as: "homepage"
   resources :allergies
   resources :ingredientrecipes
   resources :ingredients
